@@ -2,6 +2,16 @@
 This repository contains code written in Dr. Taylor's lectures
 for CSC1120, Data Structures and Graphical Interfaces.
 
+# Week 2
+## Announcements
+- Grading lab 1 submissions
+  + Goal to return labs within a day of submission, unless submitted late
+- Incremental commits for lab 2 (first due today)
+- Homework and reading quiz due Sunday
+- My availability
+  + Not available on Sundays
+  + Not available after 5pm the day lab is due
+
 # Week 1
 ## Announcements
 - First Year Seminar in Programming today at Noon in DH Auditorium

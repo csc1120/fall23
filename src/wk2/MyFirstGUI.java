@@ -10,10 +10,14 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.util.List;
+
 
 public class MyFirstGUI extends Application {
     @Override
     public void start(Stage stage) {
+        List<String> params = getParameters().getUnnamed();
+
         Label label = new Label("Hello World!");
         label.setFont(new Font(40));
         Pane pane = new VBox();
