@@ -2,6 +2,16 @@
 This repository contains code written in Dr. Taylor's lectures
 for CSC1120, Data Structures and Graphical Interfaces.
 
+# Week 3
+## Announcements
+- All lab 1 submissions should be graded and returned
+- Video on how to view my feedback (please watch)
+- Office hours today: 7am-8am, 9am-10:30am
+- Lab 2 due on Thursday
+- Homework growing pains
+  + JavaFX homework not testing correctly
+  + submissions changing to screenshots (hopefully temporarily)
+
 # Week 2
 ## Announcements
 - Grading lab 1 submissions
