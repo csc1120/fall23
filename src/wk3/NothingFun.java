@@ -15,21 +15,23 @@ public class NothingFun extends Application {
     public void start(Stage stage) {
         a = new Label("only words I can spell like Happy");
         Button b = new Button("click me with vigor");
-        //b.setOnAction(this);
-        EventHandler<ActionEvent> handler = new VigorHandler();
-        b.setOnAction(new BHandler());
+        b.setOnAction(e -> System.out.println("somthin"));
         Button c = new Button("d");
-        c.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                a.setText("only words I can spell like Happy");
-            }
-        });
+        c.setOnAction(this::handleCButton);
         Pane root = new VBox();
         root.getChildren().addAll(a, b, c);
 
         stage.setScene(new Scene(root));
         stage.show();
+    }
+
+    private void handleCbutton(ActionEvent e) {
+        System.out.println("Lucas");
+        a.setText("only words I can spell like Happy");
+    }
+
+    private void handleCButton(ActionEvent actionEvent) {
+        System.out.println("somthin");
     }
 
     private class BHandler implements EventHandler<ActionEvent> {
