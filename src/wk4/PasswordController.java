@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextInputDialog;
 
 import java.util.Optional;
 
@@ -25,12 +26,12 @@ public class PasswordController {
                 System.out.println("Thanks for acknowledging my hard work.");
             }
         } else {
-            Alert alert = new Alert(ERROR, "Make that thing longer or you will likely be hacked.");
-            Optional<ButtonType> response = alert.showAndWait();
-            if (response.isPresent()) {
-                System.out.println("Thanks for acknowledging your failure.");
-            }
-
+            TextInputDialog dialog = new TextInputDialog();
+            dialog.setTitle("Password in the clear prompt");
+            dialog.setHeaderText("Enter a longer password");
+            Optional<String> response = dialog.showAndWait();
+            response.ifPresent(pw -> password.setText(pw));
+            System.out.println("Lukas");
         }
     }
 }
