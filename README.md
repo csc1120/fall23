@@ -4,8 +4,8 @@ for CSC1120, Data Structures and Graphical Interfaces.
 
 # Week 4
 ## Announcements
-- First year seminar noon-1pm today
-- Lunch with a professor 11am-12:30pm today
+- First year seminar noon-1pm Tuesday
+- Lunch with a professor 11am-12:30pm Tuesday
 - First commit for lab due prior to lab
 - Should have your grades to date
 - Half-way to first exam
