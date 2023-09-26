@@ -2,6 +2,14 @@
 This repository contains code written in Dr. Taylor's lectures
 for CSC1120, Data Structures and Graphical Interfaces.
 
+# Week 5
+## Announcements
+- Quiz this week is online survey
+- This week's lab is LearnCS.Online problems
+  - Try to do these in the browser rather than in IntelliJ - practice for quiz/exam
+  - Upload screenshots with console output
+- Have released lab for next week for those who want to start early
+
 # Week 4
 ## Announcements
 - First year seminar noon-1pm Tuesday
