@@ -57,8 +57,14 @@ public class ArrayList<E> implements List<E> {
     }
 
     @Override
-    public boolean remove(Object o) {
-        return false;
+    public boolean remove(Object target) {
+        boolean removed = false;
+        int index = indexOf(target);
+        if (index >= 0) {
+            remove(index);
+            removed = true;
+        }
+        return removed;
     }
 
     @Override
@@ -68,7 +74,9 @@ public class ArrayList<E> implements List<E> {
 
     @Override
     public E set(int index, E element) {
-        return null;
+        E oldGuy = get(index);
+        data[index] = element;
+        return oldGuy;
     }
 
     @Override
@@ -78,7 +86,9 @@ public class ArrayList<E> implements List<E> {
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        Object[] toReturn = new Object[size()];
+        System.arraycopy(data, 0, toReturn, 0, size());
+        return toReturn;
     }
 
     @Override
