@@ -2,6 +2,14 @@
 This repository contains code written in Dr. Taylor's lectures
 for CSC1120, Data Structures and Graphical Interfaces.
 
+# Week 6
+## Announcements
+- I will be out after lab on Thursday, 10/5, returning to campus Wednesday, 10/11
+- Get started on lab early - no office hours Monday, 10/9
+- Will try to be online for questions noon-4pm Saturday, 10/7
+- Exam I is next Tuesday, next Monday will be a practice exam
+- Recommend watching Prof. Colleen Lewis' videos on learncs.online for this week on LinkedList
+
 # Week 5
 ## Announcements
 - Quiz this week is online survey
