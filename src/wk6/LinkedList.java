@@ -52,6 +52,8 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public void clear() {
+        head = null;
+        size = 0;
     }
 
     @Override
@@ -61,27 +63,68 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public E get(int index) {
-        return null;
+        boundsCheck(index);
+        Node<E> walker = head;
+        for (int i = 0; i < index; i++) {
+            walker = walker.next;
+        }
+        return walker.value;
     }
 
     @Override
     public int indexOf(Object target) {
-        return 0;
+        int indexFound = -1;
+        boolean found = false;
+        Node<E> walker = head;
+        while (walker != null && !found) {
+            indexFound++;
+            found = Objects.equals(target, walker.value);
+            walker = walker.next;
+        }
+        if (!found) {
+            indexFound = -1;
+        }
+        return indexFound;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return size() == 0;
     }
 
     @Override
     public boolean remove(Object target) {
-        return false;
+        boolean removed = false;
+        int index = indexOf(target);
+        if (index >= 0) {
+            removed = true;
+            remove(index);
+        }
+        return removed;
     }
 
     @Override
     public E remove(int index) {
-        return null;
+        boundsCheck(index);
+        E removedThing;
+        if (index == 0) {
+            removedThing = head.value;
+            head = head.next;
+        } else {
+            Node<E> walker = head;
+            for (int i = 0; i < index - 1; i++) {
+                walker = walker.next;
+            }
+            removedThing = walker.next.value;
+            walker.next = walker.next.next;
+        }
+        return removedThing;
+    }
+
+    private void boundsCheck(int index) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Index: " + index + " on size: " + size());
+        }
     }
 
     @Override
@@ -91,66 +134,72 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
     public Object[] toArray() {
-        return null;
+        Object[] result = new Object[size()];
+        Node<E> walker = head;
+        for (int i = 0; i < size(); i++) {
+            result[i] = walker.value;
+            walker = walker.next;
+        }
+        return result;
     }
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        throw new UnsupportedOperationException("Did not implement");
     }
 
     @Override
     public <T> T[] toArray(T[] a) {
-        return null;
+        throw new UnsupportedOperationException("Did not implement");
     }
 
     @Override
     public boolean containsAll(Collection<?> c) {
-        return false;
+        throw new UnsupportedOperationException("Did not implement");
     }
 
     @Override
     public boolean addAll(Collection<? extends E> c) {
-        return false;
+        throw new UnsupportedOperationException("Did not implement");
     }
 
     @Override
     public boolean addAll(int index, Collection<? extends E> c) {
-        return false;
+        throw new UnsupportedOperationException("Did not implement");
     }
 
     @Override
     public boolean removeAll(Collection<?> c) {
-        return false;
+        throw new UnsupportedOperationException("Did not implement");
     }
 
     @Override
     public boolean retainAll(Collection<?> c) {
-        return false;
+        throw new UnsupportedOperationException("Did not implement");
     }
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        throw new UnsupportedOperationException("Did not implement");
     }
 
     @Override
     public ListIterator<E> listIterator() {
-        return null;
+        throw new UnsupportedOperationException("Did not implement");
     }
 
     @Override
     public ListIterator<E> listIterator(int index) {
-        return null;
+        throw new UnsupportedOperationException("Did not implement");
     }
 
     @Override
     public List<E> subList(int fromIndex, int toIndex) {
-        return null;
+        throw new UnsupportedOperationException("Did not implement");
     }
 }

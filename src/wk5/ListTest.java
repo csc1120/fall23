@@ -4,13 +4,14 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.*;
+import wk6.LinkedList;
 
 class ListTest {
     private List<String> list;
 
     @BeforeEach
     void setUp() {
-        list = new ArrayList<>();
+        list = new LinkedList<>();
     }
 
     @AfterEach
