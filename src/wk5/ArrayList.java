@@ -9,6 +9,10 @@ public class ArrayList<E> implements List<E> {
         data = new Object[0];
     }
 
+    public ArrayList(E[] values) {
+        data = Arrays.copyOf(values, values.length);
+    }
+
     @Override
     public boolean add(E element) {
         Object[] biggerGuy = new Object[data.length + 1];
