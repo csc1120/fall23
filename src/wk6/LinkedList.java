@@ -3,12 +3,12 @@ package wk6;
 import java.util.*;
 
 public class LinkedList<E> implements List<E> {
-    private Node<E> head;
+    protected Node<E> head;
     private int size;
 
-    private static class Node<E> {
-        E value;
-        Node<E> next;
+    protected static class Node<E> {
+        public E value;
+        public Node<E> next;
 
         private Node(E value, Node<E> next) {
             this.value = value;
