@@ -2,6 +2,12 @@
 This repository contains code written in Dr. Taylor's lectures
 for CSC1120, Data Structures and Graphical Interfaces.
 
+# Week 9
+- Student hours today: 7-8am, 9-10am, and 1-3pm
+- May not get response after 5pm and on Sundays
+- Slight rearrangement of lecture topics - Binary Search today, then recursion
+- Quiz covers material prior to Tuesday lecture of the week of the quiz
+
 # Week 6
 ## Announcements
 - I will be out after lab on Thursday, 10/5, returning to campus Wednesday, 10/11
