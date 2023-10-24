@@ -134,7 +134,11 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public int size() {
-        return size;
+        return size(head);
+    }
+
+    private int size(Node<E> start) {
+        return start == null ? 0 : 1 + size(start.next);
     }
 
     @Override

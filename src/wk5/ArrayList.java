@@ -47,10 +47,23 @@ public class ArrayList<E> implements List<E> {
     @Override
     public int indexOf(Object target) {
         int index = -1;
-        for(int i = 0; index == -1 && i < size(); i++) {
-            if (Objects.equals(target, data[i])) {
-                index = i;
-            }
+        if (size() > 0) {
+            index = indexOf(target, 0);
+        }
+//        for(int i = 0; index == -1 && i < size(); i++) {
+//            if (Objects.equals(target, data[i])) {
+//                index = i;
+//            }
+//        }
+        return index;
+    }
+
+    private int indexOf(Object target, int start) {
+        int index = -1;
+        if (Objects.equals(target, data[start])) {
+            index = start;
+        } else if (start + 1 < size()) {
+            index = indexOf(target, start+1);
         }
         return index;
     }
