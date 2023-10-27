@@ -7,22 +7,29 @@ import java.util.Objects;
 
 public class Driver {
     public static void main(String[] args) {
-//        List<String> words = List.of("apple", "cheese", "orange", "ryan", "stuff" );
-//        System.out.println(binarySearch(words, "yogurt"));
-//        System.out.println(binarySearch(words, "orange"));
-//        System.out.println(binarySearch(words, "cheese"));
-//        System.out.println(binarySearch(words, "stuff"));
-//        System.out.println(binarySearch(words, "ryan"));
-        System.out.println(factorial(5));
-        System.out.println(factorialRec(5));
+        List<String> words = List.of("apple", "cheese", "orange", "ryan", "stuff" );
+        System.out.println(binarySearchRec(words, "yogurt"));
+        System.out.println(binarySearchRec(words, "orange"));
+        System.out.println(binarySearchRec(words, "cheese"));
+        System.out.println(binarySearchRec(words, "stuff"));
+        System.out.println(binarySearchRec(words, "ryan"));
     }
 
-    public static long factorialRec(int x) {
-        long factorial = 1;
-        if (x > 1) {
-            factorial = x * factorialRec(x - 1);
+    // Don't put nulls in this thing, or I'll misbehave
+    public static boolean binarySearchRec(List<String> list, String target) {
+        boolean found = false;
+        if (!list.isEmpty()) {
+            int middle = list.size() / 2;
+            int compare = list.get(middle).compareTo(target);
+            if (compare == 0) {
+                found = true;
+            } else if (compare < 0) {
+                found = binarySearchRec(list.subList(middle + 1, list.size()), target);
+            } else {
+                found = binarySearchRec(list.subList(0, middle), target);
+            }
         }
-        return factorial;
+        return found;
     }
 
     // Don't put nulls in this thing, or I'll misbehave
@@ -53,17 +60,13 @@ public class Driver {
         }
         return factorial;
     }
+
+    public static long factorialRec(int x) {
+        long factorial = 1;
+        if (x > 1) {
+            factorial = x * factorialRec(x - 1);
+        }
+        return factorial;
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
