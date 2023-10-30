@@ -2,6 +2,10 @@
 This repository contains code written in Dr. Taylor's lectures
 for CSC1120, Data Structures and Graphical Interfaces.
 
+# Week 10
+- Lab 10 can be done in LearnCS or IntelliJ... pick one
+- Lunch with students 11:30am-12:30pm Tuesday
+
 # Week 9
 - Student hours today: 7-8am, 9-10am, and 1-3pm
 - May not get response after 5pm and on Sundays
