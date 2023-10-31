@@ -1,5 +1,7 @@
 package wk10;
 
+import java.util.function.Consumer;
+
 public class BST<E extends Comparable<? super E>> {
     private static final class Node<E> {
         Node<E> left;
@@ -21,6 +23,42 @@ public class BST<E extends Comparable<? super E>> {
 
     public BST() {
         root = null;
+    }
+
+    public void preOrder(Consumer<E> doIt) {
+        preOrder(root, doIt);
+    }
+
+    private void preOrder(Node<E> subroot, Consumer<E> doIt) {
+        if (subroot != null) {
+            doIt.accept(subroot.value);
+            preOrder(subroot.left, doIt);
+            preOrder(subroot.right, doIt);
+        }
+    }
+
+    public void inOrder(Consumer<E> doIt) {
+        inOrder(root, doIt);
+    }
+
+    private void inOrder(Node<E> subroot, Consumer<E> doIt) {
+        if (subroot != null) {
+            inOrder(subroot.left, doIt);
+            doIt.accept(subroot.value);
+            inOrder(subroot.right, doIt);
+        }
+    }
+
+    public void postOrder(Consumer<E> doIt) {
+        postOrder(root, doIt);
+    }
+
+    private void postOrder(Node<E> subroot, Consumer<E> doIt) {
+        if (subroot != null) {
+            postOrder(subroot.left, doIt);
+            postOrder(subroot.right, doIt);
+            doIt.accept(subroot.value);
+        }
     }
 
     public boolean isEmpty() {
