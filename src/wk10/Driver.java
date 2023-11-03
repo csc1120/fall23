@@ -4,6 +4,13 @@ import java.util.function.Consumer;
 
 public class Driver {
     public static void main(String[] args) {
+        BinaryTree<String> tree = new BinaryTree<>("opposites",
+                new BinaryTree<>("happy"),
+                new BinaryTree<>("sad"));
+        System.out.println(tree);
+    }
+
+    public static void main2(String[] args) {
         BST<Integer> bst = new BST<>();
         bst.add(5);
         bst.add(4);
