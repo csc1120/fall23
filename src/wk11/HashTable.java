@@ -7,10 +7,11 @@ import java.util.List;
 public class HashTable<E> {
     private List<E>[] table;
     public static final int DEFAULT_CAPACITY = 19;
+    public static final double LOAD_FACTOR_THRESHOLD = 0.75;
     private int size;
 
     public HashTable() {
-        table = new LinkedList<>[DEFAULT_CAPACITY];
+        table = new LinkedList[DEFAULT_CAPACITY];
         size = 0;
     }
 
@@ -18,7 +19,67 @@ public class HashTable<E> {
         return size == 0;
     }
 
+    public int size() {
+        return size;
+    }
+
+    public void clear() {
+        table = new LinkedList[DEFAULT_CAPACITY];
+        size = 0;
+    }
+
+    public boolean contains(Object target) {
+        int index = Math.abs(target.hashCode()) % table.length;
+        return table[index] != null && table[index].contains(target);
+    }
+
+    public boolean remove(Object target) {
+        boolean removed = false;
+        int index = Math.abs(target.hashCode()) % table.length;
+        if (table[index] != null && table[index].remove(target)) {
+            removed = true;
+            size--;
+        }
+        return removed;
+    }
+
+    private void ensureCapacity() {
+        if ((double)size / table.length > LOAD_FACTOR_THRESHOLD) {
+            List<E>[] newTable = new List[table.length * 2];
+            for (List<E> bucket : table) {
+                if (bucket != null) {
+                    for (E element : bucket) {
+                        int index = Math.abs(element.hashCode()) % newTable.length;
+                        if (newTable[index] == null) {
+                            newTable[index] = new LinkedList<>();
+                        }
+                        newTable[index].add(element);
+                    }
+                }
+            }
+            table = newTable;
+        }
+    }
+
     public boolean add(E element) {
-        return false;
+        boolean added = false;
+        ensureCapacity();
+        int index = Math.abs(element.hashCode()) % table.length;
+        if (table[index] == null) {
+            table[index] = new LinkedList<>();
+        }
+        if (!table[index].contains(element)) {
+            added = true;
+            size++;
+            table[index].add(element);
+        }
+        return added;
     }
 }
+
+
+
+
+
+
+

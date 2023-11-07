@@ -19,10 +19,10 @@ package wk11;
  */
 public class Driver {
     public static void main(String[] args) {
-        System.out.println("fire".hashCode());
-        System.out.println("alarm".hashCode());
-        System.out.println("chowder".hashCode());
-        System.out.println("five".hashCode());
-        System.out.println("the rain is spain is wet".hashCode());
+        HashTable<Double> table = new HashTable<>();
+        for (int i = 0; i < 1000; i++) {
+            table.add((double)i);
+        }
+        System.out.println(table.contains(13));
     }
 }
